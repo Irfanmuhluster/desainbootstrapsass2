@@ -1,0 +1,176 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// @import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+$green-50: #f0fdf4;
+$green-100: #dcfce7;
+$green-200: #bbf7d0;
+$green-300: #86efac;
+$green-400: #4ade80;
+$green-500: #22c55e;
+$green-600: #16a34a;
+$green-700: #15803d;
+$green-800: #166534;
+$green-900: #14532d;
+
+
+$primary: $green-600;
+
+$theme-colors: (
+    "primary": $primary
+);
+
+// extend color , customyour own color
+$custom-color: (
+    "icon-background": rgba(162, 28, 175, 0.25)
+);
+
+$merge-colors: map-merge($theme-colors , $custom-color );
+
+$utilities: (
+    "height": (
+        property: height,
+        class: h,
+        values: (
+          12: 12%,
+          25: 25%,
+          50: 50%,
+          75: 75%,
+          100: 100%,
+          500px : 500px,
+          auto: auto
+        )
+    ),
+    "background-color": (
+        property: background-color,
+        class: bg,
+        values: map-merge(
+          $theme-colors,
+          (
+            "slider": rgba(33 , 37, 41, 0.75),
+            "light": #f8f9fa,
+            "transparent": transparent
+          )
+        )
+      ),
+);
+
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "homepages/agenda";
+@import "homepages/news";
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
+    position: relative;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.attachment-card-img {
+    width: 100%;
+    border-radius: calc(.25rem - 1px);
+    object-fit: cover;
+    height: 150px;
+}
+
+
+.bg-green {
+    background-color: $green-400;
+}
+.nav-link-top {
+    display: block;
+    padding: 0.5rem 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    &:hover {
+        color: $orange-200 !important;
+    }
+}
+
+.img-slider {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.img-slider2 {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+body {
+    // color: #333;
+    // font-size: 14px;
+    font-family: 'Roboto',sans-serif !important;
+    // line-height: 24px;
+}
+
+.block-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $orange-700;
+    font-size: 20px;
+}
+
+.permalink-item {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    a {
+        display: block;
+        color: $gray-700;
+        font-size: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #4ed294;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.footer {
+    background-color: $gray-900;
+    color: $gray-100;
+    padding-top: 3rem;
+}
+
+#footer .contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.copyright {
+    background: #060606;
+    border-top: 4px solid #060606;
+    margin-top: 40px;
+    padding: 30px 0 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: -1px 2px 5px 2px;
+    padding: 0;
+    border-radius: 100%;
+    overflow: visible;
+    box-shadow: $box-shadow-sm;
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+a {
+    color: #004282;
+    text-decoration: none;
+}
